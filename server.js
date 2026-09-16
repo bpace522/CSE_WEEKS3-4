@@ -10,15 +10,14 @@ const port = process.env.PORT || 8080;
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use('/vehicles', require('./routes/vehicles'));
-app.use('/dealerships', require('./routes/dealership'));
+app.use('/', require('./routes'));
 
 app.use('/api-docs', (req, res, next) => {
   swaggerDocument.host = req.get('host');
-  swaggerDocument.schemes = [req.protocol];
+  swaggerDocument.schemes = ['https', 'http'];
   req.swaggerDoc = swaggerDocument;
   next();
-}, swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+}, swaggerUi.serve, swaggerUi.setup());
 
 app.use((req, res, next) => {
     res.status(404).json({ message: 'Route not found' });
