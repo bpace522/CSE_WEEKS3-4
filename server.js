@@ -11,7 +11,12 @@ app.use(bodyParser.json());
 app.use('/vehicles', require('./routes/vehicles'));
 app.use('/dealerships', require('./routes/dealership'));
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api-docs', (req, res, next) => {
+  swaggerDocument.host = req.get('host');
+  swaggerDocument.schemes = [req.protocol];
+  req.swaggerDoc = swaggerDocument;
+  next();
+}, swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use((req, res, next) => {
     res.status(404).json({ message: 'Route not found' });
