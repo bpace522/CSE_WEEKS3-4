@@ -5,11 +5,11 @@
     "description": "CSE 341 Week 3-4 Project API Documentation",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "cse-weeks3-4.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
-    "https"
+    "https",
+    "http"
   ],
   "paths": {
     "/": {

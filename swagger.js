@@ -5,8 +5,8 @@ const doc = {
     title: 'Vehicles & Dealerships API',
     description: 'CSE 341 Week 3-4 Project API Documentation',
   },
-  host: 'localhost:8080',
-  schemes: ['http', 'https'],
+  host: 'cse-weeks3-4.onrender.com',
+  schemes: ['https', 'http'],
 };
 
 const outputFile = './swagger.json';
