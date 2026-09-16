@@ -1,0 +1,32 @@
+{
+  "name": "cse_weeks3-4",
+  "version": "1.0.0",
+  "description": "schoolwork for weeks 3-4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bpace522/CSE_WEEKS3-4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bpace522/CSE_WEEKS3-4/issues"
+  },
+  "homepage": "https://github.com/bpace522/CSE_WEEKS3-4#readme",
+  "dependencies": {
+    "body-parser": "^2.3.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.2",
+    "mongodb": "^7.6.0",
+    "nodemon": "^3.1.14",
+    "swagger-ui-express": "^5.0.1"
+  }
+}

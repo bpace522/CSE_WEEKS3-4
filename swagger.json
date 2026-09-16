@@ -1,0 +1,7 @@
+{
+  "openapi": "3.0.0",
+  "info": "My API Documentation",
+  "version": "1.0.0",
+  "description": "CSE 341 Project API",
+  "paths": {}
+}

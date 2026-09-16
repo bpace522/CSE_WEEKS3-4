@@ -1,0 +1,150 @@
+### ===================================================
+### VEHICLES ENDPOINTS
+### ===================================================
+
+### Get all vehicles
+GET http://localhost:8080/vehicles
+
+### Get one vehicle by valid ID
+GET http://localhost:8080/vehicles/6aa9d14411e41d81e58a6649
+
+### Get vehicle with INVALID ID format (Should return 400 Bad Request)
+GET http://localhost:8080/vehicles/invalid-id-123
+
+### Create vehicle (Valid)
+POST http://localhost:8080/vehicles
+Content-Type: application/json
+
+{
+    "dealershipId": "6aa9d34311e41d81e58a664b",
+    "make": "Toyota",
+    "model": "Tacoma",
+    "year": 2022,
+    "color": "Army Green",
+    "mileage": 18500,
+    "price": 34999,
+    "vin": "1TGRX5EF2NC012345"
+}
+
+### Create vehicle with INVALID data (Should return 400 Bad Request)
+POST http://localhost:8080/vehicles
+Content-Type: application/json
+
+{
+    "dealershipId": "not-a-valid-id",
+    "make": "",
+    "model": "Tacoma",
+    "year": "twenty-twenty",
+    "color": "",
+    "mileage": -500,
+    "price": "free",
+    "vin": "short-vin"
+}
+
+### Update vehicle (Valid)
+PUT http://localhost:8080/vehicles/6aa9e82e57fc1e7aa644496a
+Content-Type: application/json
+
+{
+    "dealershipId": "6aa9d34311e41d81e58a664b",
+    "make": "Toyota",
+    "model": "Tacoma TRD Pro",
+    "year": 2022,
+    "color": "Midnight Black",
+    "mileage": 19200,
+    "price": 36500,
+    "vin": "1TGRX5EF2NC012345"
+}
+
+### Update vehicle with INVALID ID format (Should return 400 Bad Request)
+PUT http://localhost:8080/vehicles/bad-id
+Content-Type: application/json
+
+{
+    "dealershipId": "6aa9d34311e41d81e58a664b",
+    "make": "Toyota",
+    "model": "Tacoma",
+    "year": 2022,
+    "color": "Black",
+    "mileage": 19200,
+    "price": 36500,
+    "vin": "1TGRX5EF2NC012345"
+}
+
+### Delete vehicle (Valid)
+DELETE http://localhost:8080/vehicles/6aa9e82e57fc1e7aa644496a
+
+### Delete vehicle with INVALID ID format (Should return 400 Bad Request)
+DELETE http://localhost:8080/vehicles/bad-id
+
+
+### ===================================================
+### DEALERSHIPS ENDPOINTS
+### ===================================================
+
+### Get all dealerships
+GET http://localhost:8080/dealerships
+
+### Get one dealership by valid ID (Replace with a real ID from your DB)
+GET http://localhost:8080/dealerships/6aa9d34311e41d81e58a664b
+
+### Get dealership with INVALID ID format (Should return 400 Bad Request)
+GET http://localhost:8080/dealerships/invalid-id-123
+
+### Create dealership (Valid)
+POST http://localhost:8080/dealerships
+Content-Type: application/json
+
+{
+    "name": "AutoNation West",
+    "city": "Denver",
+    "state": "CO",
+    "zipCode": "80202",
+    "phone": "303-555-0199",
+    "website": "https://autonationwest.example.com"
+}
+
+### Create dealership with INVALID data (Should return 400 Bad Request)
+POST http://localhost:8080/dealerships
+Content-Type: application/json
+
+{
+    "name": "",
+    "city": "",
+    "state": "",
+    "zipCode": "",
+    "phone": "not-a-phone-number",
+    "website": "not-a-url"
+}
+
+### Update dealership (Valid)
+PUT http://localhost:8080/dealerships/6aa9e9c05fea4f6080f06144
+Content-Type: application/json
+
+{
+    "name": "AutoNation West - Updated",
+    "city": "Denver",
+    "state": "CO",
+    "zipCode": "80203",
+    "phone": "303-555-0200",
+    "website": "https://autonationwest-updated.example.com"
+}
+
+### Update dealership with INVALID ID format (Should return 400 Bad Request)
+PUT http://localhost:8080/dealerships/bad-id
+Content-Type: application/json
+
+{
+    "name": "AutoNation West",
+    "city": "Denver",
+    "state": "CO",
+    "zipCode": "80202",
+    "phone": "303-555-0199",
+    "website": "https://autonationwest.example.com"
+}
+
+### Delete dealership (Valid)
+DELETE http://localhost:8080/dealerships/6aa9e9c05fea4f6080f06144
+
+### Delete dealership with INVALID ID format (Should return 400 Bad Request)
+DELETE http://localhost:8080/dealerships/bad-id
